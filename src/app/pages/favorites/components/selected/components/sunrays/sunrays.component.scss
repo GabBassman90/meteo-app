@@ -1,0 +1,24 @@
+.frame {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  border-radius: 2px;
+  box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.6);
+  font-family: 'overlock', Helvetica, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+svg{
+  position: absolute;
+  bottom: 0;
+
+}

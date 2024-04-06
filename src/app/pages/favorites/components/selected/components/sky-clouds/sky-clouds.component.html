@@ -1,0 +1,24 @@
+<div class="clouds-container">
+  @for (cloud of clouds; track $index) {
+  <div
+    class="cloud"
+    [ngClass]="{ east: !isWestWind, west: isWestWind }"
+    [ngStyle]="{
+  'position': 'absolute',
+  'top': cloud.top + '%',
+  'left': cloud.left + '%',
+  'right': cloud.right + '%',
+    }"
+    [class.east]="!isWestWind"
+    [class.west]="isWestWind"
+  >
+    <ng-icon
+      class="icon-cloud"
+      name="bootstrapCloudFill"
+      [color]="cloud.color"
+      [size]="cloud.size.toString()"
+    ></ng-icon>
+  </div>
+
+  }
+</div>

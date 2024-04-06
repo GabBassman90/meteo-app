@@ -1,0 +1,20 @@
+<div class="container-datepicker">
+  <div class="container-favorites">
+      <h1>{{ cityName.charAt(0).toUpperCase() + cityName.slice(1) }}</h1>
+      <app-input-favorites />
+  </div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Choose a date</mat-label>
+      <input
+        matInput
+        [min]="minDate"
+        [max]="maxDate"
+        [matDatepicker]="picker1"
+        [(ngModel)]="selectedDate"
+        (ngModelChange)="updateDateToParent($event)"
+      />
+      <mat-datepicker-toggle matIconSuffix [for]="picker1">
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+</div>

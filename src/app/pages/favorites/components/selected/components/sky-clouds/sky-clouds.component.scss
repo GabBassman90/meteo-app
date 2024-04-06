@@ -1,0 +1,77 @@
+
+.cloud {
+  position: absolute;
+
+}
+.clouds-container{
+  height: 50%;
+  width: 100%;
+  position: relative;
+
+}
+
+.icon-cloud{
+  filter: drop-shadow(2px 6px 4px rgba(0,0,0, 0.3));
+}
+
+
+
+
+
+
+
+
+
+
+/*cloud animation*/
+/* Add a new animation for west-oriented wind */
+@keyframes wind-west {
+  0% {
+    background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+  }
+  100% {
+    background-position: 0 200px, 0 300px, 100px 250px;
+  }
+}
+
+@keyframes animateCloudEast {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animateCloudWest {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes wind-west {
+  0% {
+    background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+  }
+  100% {
+    background-position: 0 200px, 0 300px, 100px 250px;
+  }
+}
+
+
+.cloud.east {
+  animation: animateCloudEast linear infinite;
+}
+
+.cloud.west {
+  animation: animateCloudWest linear infinite;
+}
+
+#cloud-intro.west {
+  animation: wind-west linear infinite;
+}
+
+

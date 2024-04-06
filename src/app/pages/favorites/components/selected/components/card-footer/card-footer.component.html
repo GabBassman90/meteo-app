@@ -1,0 +1,22 @@
+<div class="front">
+  <div class="info-container">
+    <div class="info-left">
+      <p>{{ currentTemperature }}°</p>
+      <div class="icons">
+        <i class="fas fa-wind"></i><br /><i class="fas fa-tint"></i>
+      </div>
+      <div>
+        <div class="info">
+          {{ calculateWindDirection() }} {{ currentWind.speed }} km/h <br />
+          {{ humidity }}%
+        </div>
+      </div>
+    </div>
+
+    <div class="info-right">
+      <p>Feels like {{ currentFeelsLike }}°</p>
+      <p>Pressure {{ pressure }} hPa</p>
+      <p>Visibility {{ visibility }} km</p>
+    </div>
+  </div>
+</div>

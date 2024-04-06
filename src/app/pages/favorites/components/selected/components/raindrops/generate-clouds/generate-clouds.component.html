@@ -1,0 +1,12 @@
+<div>
+  @for(cloud of clouds; track $index){
+    <ng-icon
+    style="color: black; font-size: 50px; z-index: 3; position: absolute"
+           [name]="'heroCloud'"
+           [style.left.px]="cloud.posX"
+           [style.top.px]="cloud.posY"
+
+    ></ng-icon>
+
+  }
+</div>

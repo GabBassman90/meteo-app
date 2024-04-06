@@ -1,0 +1,62 @@
+<section>
+  <form
+    class="example-form"
+    (ngSubmit)="onSubmit($event)"
+    [class.d-none]="searchBool"
+  >
+    <mat-form-field class="example-full-width spec">
+      <mat-label>Search city</mat-label>
+      <input
+        type="text"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <div id="toast-search" [class.d-none]="display">
+        <p>La città selezionata è inesistente!</p>
+      </div>
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        [displayWith]="displayFn"
+        [autoSelectActiveOption]="auto"
+        (optionSelected)="onOptionSelected($event)"
+      >
+        @if (myControl.value != '') {
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option.nome"
+        >
+          {{ option.nome }}
+        </mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <form
+    class="example-form"
+    [class.d-none]="luckyBool"
+    (ngSubmit)="luckySearch($event)"
+  >
+    <mat-form-field class="example-full-width spec">
+      <mat-label>Lucky search</mat-label>
+      <input
+        type="email"
+        matInput
+        [formControl]="luckyControl"
+        placeholder="Try a city name"
+      />
+      <div id="toast-search" [class.d-none]="display">
+        <p>La città selezionata è inesistente!</p>
+      </div>
+    </mat-form-field>
+  </form>
+  <button
+    type="button"
+    (click)="onClick()"
+    [ngClass]="{ 'gradient-left': luckyBool, 'gradient-right': searchBool }"
+  >
+    {{ buttonMessage }}
+  </button>
+  <hr />
+</section>

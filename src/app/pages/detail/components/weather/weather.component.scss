@@ -1,0 +1,58 @@
+@import "../../../../styles/globals.scss";
+
+.main-container {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .rotating-div {
+    width: 12rem;
+    height: 12rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(24, 90, 222, 0.3);
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;    transform-style: preserve-3d; /* Enable 3D transformations */
+    transition: transform 0.3s ease-in-out; /* Smooth rotation transition */
+    animation: rotateBackAndForth 2s ease-in-out infinite alternate;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+    transition: transform 0.3s ease-in-out; /* Smooth arrow rotation transition */
+  }
+
+  .circle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #2ecc71; /* Green color */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;  };
+
+    p {
+      box-shadow: rgba(50, 50, 93, 0.75);
+
+    }
+
+  @keyframes rotateBackAndForth {
+    0%, 100% {
+      transform: rotate(calc(var(--initial-rotation) - 3deg));
+    }
+    50% {
+      transform: rotate(calc(var(--initial-rotation) + 3deg));
+    }
+  }
+}

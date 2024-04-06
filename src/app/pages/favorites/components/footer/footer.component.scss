@@ -1,0 +1,84 @@
+@import "../../../../styles/variables.scss";
+
+.container-card {
+  display: flex;
+  gap: 1rem;
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.104);
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+    color: white;
+    width: 20%;
+    border: none;
+    .card-content {
+      display: flex;
+      height: 80%;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      .hours-and-temp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0.6rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        .hours {
+          width: 40%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          font-weight: bold;
+        }
+        .font-hours {
+          font-weight: bold;
+        }
+        .fa-regular {
+          font-size: 2vw;
+        }
+      }
+      .wind-and-humidity {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.6rem;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 5%;
+      }
+    }
+  }
+}
+
+.fa-solid {
+  font-size: 2vw;
+}
+.fa-tint {
+  font-size: 2vw;
+}
+
+@media screen and (max-width: 1000px) {
+  .container-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    .card{
+      width: 65%;
+    }
+  }
+  span {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container-card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+    gap: 10px;
+  }
+  span {
+    font-size: 15px;
+  }
+}

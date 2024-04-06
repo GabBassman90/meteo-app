@@ -1,0 +1,45 @@
+<section class="selected-main-container">
+  <div class="weather-condition">
+    <div class="weather-animation">
+      @if(currentWeatherSituation === "Rain" || currentWeatherSituation ===
+      "Drizzle") {
+      <app-raindrops
+        [temperatureInput]="currentTemperature"
+        [humidityInput]="humidity"
+        [windInput]="currentWind"
+        [feelsLikeInput]="feelsLike"
+        [visibilityInput]="visibility"
+        [pressureInput]="pressure"
+        [timestampInput]="currentTimestamp"
+      ></app-raindrops>
+      }@else if(currentWeatherSituation === "Clouds") {
+      <app-clouds></app-clouds>
+
+      }@else if(currentWeatherSituation === "Clear") {
+      <app-sunrays
+        [temperatureInput]="currentTemperature"
+        [humidityInput]="humidity"
+        [windInput]="currentWind"
+        [feelsLikeInput]="feelsLike"
+        [visibilityInput]="visibility"
+        [pressureInput]="pressure"
+        [timestampInput]="currentTimestamp"
+      ></app-sunrays>
+      }@else if(currentWeatherSituation === 'Snow'){
+      <app-snow
+        [temperatureInput]="currentTemperature"
+        [humidityInput]="humidity"
+        [windInput]="currentWind"
+        [feelsLikeInput]="feelsLike"
+        [visibilityInput]="visibility"
+        [pressureInput]="pressure"
+        [timestampInput]="currentTimestamp"
+      ></app-snow>
+      }
+    </div>
+
+    <app-weather-icon
+      [weatherConditionInput]="currentWeatherSituation"
+    ></app-weather-icon>
+  </div>
+</section>

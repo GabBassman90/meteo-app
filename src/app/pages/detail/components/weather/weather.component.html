@@ -1,0 +1,8 @@
+<div class="main-container">
+  <div class="rotating-div" [style.transform]="'rotate(' + rotationDegrees + 'deg)'">
+    <div class="arrow">
+      <ng-icon name="arrow" [color]="arrowColor" size="2.3rem" ></ng-icon>
+    </div>
+  </div>
+  <div class="circle" [ngStyle]="{'background-color': arrowColor}"><p>{{ windSpeed }}  km/h </p></div>
+</div>

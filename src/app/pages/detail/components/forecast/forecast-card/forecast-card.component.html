@@ -1,0 +1,5 @@
+<div class="forecast forecast--{{ getHour() }}">
+  <h1>{{ getHour() }}:00</h1>
+  <p>{{ forecast.main.temp }}°C</p>
+  <app-weather-icon [weatherConditionInput]="getWeatherCondition()" [timeOfDayInput]="getHour()"></app-weather-icon>
+</div>

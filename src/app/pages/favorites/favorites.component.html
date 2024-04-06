@@ -1,0 +1,22 @@
+@if (selectedCity()) {
+<section class="back-ground-global">
+  <div id="main-section">
+    <app-selected></app-selected>
+  </div>
+  <div id="footer-section">
+    <app-footer></app-footer>
+  </div>
+  <div id="side-section">
+    <app-side></app-side>
+  </div>
+</section>
+
+}@else {
+<div id="place-holder" class="back-ground-global">
+  <div>
+    <h2>Nessuna città nei preferiti</h2>
+    <p>Vai alla home per cercare ed aggiungere una città ai preferiti</p>
+    <a routerLink="/projects/iata-app/home">Go to search</a>
+  </div>
+</div>
+}

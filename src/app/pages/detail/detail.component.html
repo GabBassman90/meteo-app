@@ -1,0 +1,34 @@
+<section class="back-ground-global">
+  <div class="main-detail-container">
+    <div class="detail-wrapper">
+      <div class="fraction detail-header">
+        <datepicker (addDateToParent)="receiveData($event)" />
+      </div>
+      <div class="fraction detail-left">
+        <div class="weather-details">
+          <app-weather-icon
+            [weatherConditionInput]="currentWeatherSituation" [timeOfDayInput]="getTimeOfDay()"
+          ></app-weather-icon>
+          <div class="temperature" [class]="temperatureColorClass">
+            <h1>{{ currentTemperature }}°C</h1>
+          </div>
+        </div>
+        <div class="wind-condition">
+          <app-weather
+            [windSpeedInput]="currentWind.speed"
+            [windDirectionInput]="currentWind.deg"
+          ></app-weather>
+        </div>
+      </div>
+      <div class="fraction detail-right">
+        <div class="map-container">
+          <app-map [coordinatesInput]="currentCoordinates"></app-map>
+        </div>
+      </div>
+
+      <div class="detail-forecast">
+        <app-forecast [forecastInput]="forecastData"></app-forecast>
+      </div>
+    </div>
+  </div>
+</section>

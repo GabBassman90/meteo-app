@@ -1,0 +1,69 @@
+.moon {
+  position: absolute;
+	width: 6rem;
+	height: 6rem;
+  top: 35px;
+  left: 45px;
+  border-radius: 50px;
+	background-image: linear-gradient(to left top, #b1b1c5, #928fa3, #746f82, #575162, #3c3444);
+	box-shadow: 0 0 3rem fade-out(#B1B1C5, .8);
+	animation: rise 1s ease-out;
+	&:hover {
+		transform: scale(1.2);
+		transition: 3s;
+	}
+}
+
+.moon-crater1 {
+	position: absolute;
+	width: 1.7rem;
+	height: 1.7rem;
+	border-radius: 50%;
+	border: 4px solid fade-out(#3C3444, .9);
+	top: 1rem;
+	left: .8rem;
+}
+.moon-crater2 {
+	position: absolute;
+	width: 1.4rem;
+	height: 1.4rem;
+	border-radius: 50%;
+	background: fade-out(#3C3444, .85);
+	top: 3.4rem;
+	left: 2.8rem;
+}
+
+.sun {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  top: 20px;
+  left: 25px;
+  border-radius: 50px;
+  background-image: linear-gradient(to left top, #dfdf239b, #bdbd15a7, #bac61694, #d1be13aa, #f5f50da8);
+  box-shadow: 0 0 3rem fade-out(#f5f5025d, .2);
+}
+
+.sun-rays {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #f5f50276;
+  box-shadow: 0 0 3rem fade-out(#f5f50253, .4);
+  animation: sunRays 1.5s linear infinite;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: #f5f5026a;
+    box-shadow: 0 0 3rem fade-out(#f5f502, .4);
+  }
+}

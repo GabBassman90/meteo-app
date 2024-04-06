@@ -1,0 +1,11 @@
+.wind-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  .rotate-east {
+    transform: rotate(0deg); // Orienta l'icona verso est
+  }
+  .rotate-west {
+    transform: rotate(180deg); // Orienta l'icona verso ovest
+  }
+}

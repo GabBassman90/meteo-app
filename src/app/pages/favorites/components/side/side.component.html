@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    @for (item of favorites; track $index) {
+    <li [value]="$index">
+      <span (click)="selectCity(item)" (click)="onActive($index)">{{
+        item.toUpperCase()
+      }}</span>
+      <i class="bi bi-x" (click)="removeCity(item)"></i>
+    </li>
+    }
+  </ul>
+</nav>

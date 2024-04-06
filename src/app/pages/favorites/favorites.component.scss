@@ -1,0 +1,124 @@
+@import "../../styles/variables.scss";
+@import "../../styles/globals.scss";
+section{
+  padding: 10rem 5rem 0 5rem;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  grid-template-areas:
+  "main main main side"
+  "main main main side"
+  "main main main side"
+  "footer footer footer footer";
+
+
+  #side-section{
+    grid-area: side;
+  }
+  #footer-section{
+
+    grid-area: footer
+  }
+  #main-section{
+
+    grid-area: main
+  }
+}
+
+
+@media (max-width: 430px) {
+  section{
+    padding: 8rem 0.7rem 0 0.7rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    "side side side side side side"
+    "main main main main main main"
+    "main main main main main main"
+    "main main main main main main"
+    "main main main main main main"
+    "footer footer footer footer footer footer";
+  }
+}
+
+
+
+/* place-holder*/
+
+
+#place-holder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div{
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    background-color: rgba(255, 255, 255, 0.103);
+    padding: 2rem;
+    border-radius: 6px;
+    box-sizing: border-box;
+    h2{
+      font-size: 2.3rem;
+      color: $accent;
+    }
+    a{
+      box-sizing: border-box;
+      padding: 1rem;
+      border-radius: 6px;
+      background: linear-gradient(120deg, rgba(255,224,137,1) 0%, rgba(247,182,0,1) 100%);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $primary;
+
+      &:hover{
+        background: linear-gradient(310deg, rgba(255,224,137,1) 0%, rgba(247,182,0,1) 100%);
+        box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  #place-holder{
+    div{
+      width: 60%;
+    }
+  }
+}
+@media (max-width: 560px) {
+  #place-holder{
+
+    div{
+      width: 74%;
+      gap: 2.6rem;
+      a{
+        padding: 0.6rem;
+        font-size: 1rem;
+      }
+      h2{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  #place-holder{
+
+    div{
+      width: 86%;
+      gap: 2.8rem;
+      a{
+        padding: 0.45rem;
+        font-size: 0.8rem;
+      }
+      h2{
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

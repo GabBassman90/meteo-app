@@ -1,0 +1,29 @@
+<div class="container-card">
+  @for(hour of forecastData; track $index){
+
+  <div class="card">
+    <div class="card-content">
+      <app-weather-icon
+        [weatherConditionInput]="weatherSituation"
+        [timeOfDayInput]="hour.dt_txt.slice(11, 13)"
+      ></app-weather-icon>
+
+      <div class="hours-and-temp">
+        <div class="hours">
+          <app-clock  [clockInput]="hour.dt_txt" />
+          {{ hour.dt_txt | slice : 11 : 16 }}
+        </div>
+        <app-thermometer [tempsInput]="hour.main.temp"></app-thermometer>
+      </div>
+      <div class="wind-and-humidity">
+
+        <app-wind [windDirectionInput]="hour.wind.deg" [windSpeedInput]="hour.wind.speed" />
+        <!-- <span><i class="fa-solid fa-wind"></i> {{ hour.wind.speed }} km/h</span> -->
+        <span>
+          <app-humidity [humidityInput]="hour.main.humidity"></app-humidity>
+        </span>
+      </div>
+    </div>
+  </div>
+  }
+</div>

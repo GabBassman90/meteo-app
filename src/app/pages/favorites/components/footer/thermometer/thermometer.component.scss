@@ -1,0 +1,90 @@
+$color: #41110f;
+$highTemperature: rgb(191, 25, 25);
+$mediumTemperature: rgb(210, 129, 24);
+$lowTemperature: rgb(17, 144, 243);
+
+.thermometer {
+  position: relative;
+  border-radius: 100%;
+  border: 3px solid $color;
+  width: 35px;
+  height: 35px;
+  .font-temp {
+    font-size: 19px;
+    font-weight: bold;
+    z-index: 9;
+    text-align: center;
+  }
+  &:before,
+  &:after {
+    width: 15px;
+    position: absolute;
+    bottom: 95%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+  }
+  &.low-temperature {
+    &:before {
+      content: "";
+      height: 35px;
+      background: linear-gradient(to top, $lowTemperature 30%, transparent 50%);
+      z-index: 5;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+  &.medium-temperature {
+    &:before {
+      content: "";
+      height: 35px;
+      background: linear-gradient(
+        to top,
+        $mediumTemperature 50%,
+        transparent 70%
+      );
+      z-index: 5;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+  &.high-temperature {
+    &:before {
+      content: "";
+      height: 35px;
+      background: linear-gradient(
+        to top,
+        $highTemperature 70%,
+        transparent 100%
+      );
+      z-index: 5;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .thermometer {
+    width: 30px;
+    height: 30px;
+    .font-temp {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container-card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+    gap: 10px;
+    .font-temp {
+      font-size: 10px;
+    }
+  }
+  span {
+    font-size: 10px;
+  }
+}

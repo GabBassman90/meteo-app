@@ -1,0 +1,103 @@
+
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/globals.scss";
+
+.example-form {
+
+  width: 400px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+#toast-search{
+
+  p{
+    color: red;
+  }
+}
+
+.spec .mat-mdc-text-field-wrapper.mdc-text-field  {
+  background-color: $secondary;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
+  animation: slide 1s;
+	transition: 0.5s ease-in-out ;
+
+  .mat-mdc-floating-label.mdc-floating-label{
+    font-size: 1.2rem;
+    color: $primary !important;
+    opacity: 0.5;
+  }
+  .mdc-text-field__input {
+    font-size: 1.2rem;
+    color: $tertiary ;
+    caret-color: $primary;
+    // transition: 1s 0s bottom, 1s 1s left cubic-bezier(0,1,1,1);
+    // transform: translate(10);
+  }
+
+}
+
+  .mat-mdc-option{
+    color: $tertiary !important;
+  }
+
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after{
+    border-bottom-color: $accent !important;
+  }
+
+.cdk-overlay-pane:not(.mat-mdc-autocomplete-panel-above) div.mat-mdc-autocomplete-panel{
+  border-radius: 6px !important;
+  overflow: hidden;
+  background-color: $secondary;
+}
+
+
+
+
+  button{
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
+    background-color: $accent;
+    font-weight: 600;
+    color: $primary;
+  }
+section{
+  position: relative;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.gradient-left{
+  background: rgb(255,224,137);
+  background: linear-gradient(120deg, rgba(255,224,137,1) 0%, rgba(247,182,0,1) 100%);
+}
+.gradient-right{
+  background: rgb(255,224,137);
+  background: linear-gradient(310deg, rgba(255,224,137,1) 0%, rgba(247,182,0,1) 100%);
+}
+
+@keyframes slide {
+	from{
+    transform: translateY(0px);
+  }
+  45% {
+		transform: translateY(20px);
+	}
+	to {
+		transform: translateY(0px);
+	}
+}
+
+
+@media (max-width: 320px){
+  form{
+    width: 80% !important;
+  }
+}
