@@ -1,16 +1,17 @@
 import { CloudsComponent } from './components/clouds/clouds.component';
 import { Component, Input, effect } from '@angular/core';
 import { WeatherIconComponent } from '../../../detail/components/display-condition/display-condition.component';
+
+import { CommonModule } from '@angular/common';
+import { RaindropsComponent } from './components/raindrops/raindrops.component';
+import { Observable } from 'rxjs';
+import { SnowComponent } from './components/snow/snow.component';
 import {
   WeatherData,
   Wind,
-} from '@projects/iatasearch/src/app/interfaces/api-response/current-weather.interface';
-import { CommonModule } from '@angular/common';
-import { RaindropsComponent } from './components/raindrops/raindrops.component';
+} from '../../../../interfaces/api-response/current-weather.interface';
+import { IataService } from '../../../../services/iata.service';
 import { SunraysComponent } from './components/sunrays/sunrays.component';
-import { IataService } from '@projects/iatasearch/src/app/services/iata.service';
-import { Observable } from 'rxjs';
-import { SnowComponent } from './components/snow/snow.component';
 
 @Component({
   selector: 'app-selected',

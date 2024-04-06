@@ -1,12 +1,13 @@
 import { SunAndMoonComponent } from './../sun-and-moon/sun-and-moon.component';
 import { CommonModule } from '@angular/common';
 import { Component, Input, effect } from '@angular/core';
-import { convertToCelsius } from '@projects/iatasearch/src/app/utils/degrees-converter.util';
-import { Wind } from '@projects/iatasearch/src/app/interfaces/api-response/current-weather.interface';
-import { IataService } from '@projects/iatasearch/src/app/services/iata.service';
+
 import { CardFooterComponent } from '../card-footer/card-footer.component';
 import { c } from './types';
 import { SkyCloudsComponent } from '../sky-clouds/sky-clouds.component';
+import { Wind } from '../../../../../../interfaces/api-response/current-weather.interface';
+import { convertToCelsius } from '../../../../../../utils/degrees-converter.util';
+import { IataService } from '../../../../../../services/iata.service';
 
 @Component({
   selector: 'app-clouds',
